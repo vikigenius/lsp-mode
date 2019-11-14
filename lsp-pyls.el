@@ -202,6 +202,50 @@ opening bracket's line."
   :group 'lsp-pyls
   :package-version '(lsp-mode . "6.1"))
 
+(defcustom lsp-pyls-plugins-flake8-enabled t
+  "Enable or disable the plugin."
+  :type 'boolean
+  :group 'lsp-pyls
+  :package-version '(lsp-mode . "6.1"))
+
+(defcustom lsp-pyls-plugins-flake8-exclude nil
+  "Exclude files or directories which match these patterns."
+  :type '(repeat string)
+  :group 'lsp-pyls
+  :package-version '(lsp-mode . "6.1"))
+
+(defcustom lsp-pyls-plugins-flake8-filename nil
+  "When parsing directories, only check filenames matching these
+patterns."
+  :type '(repeat string)
+  :group 'lsp-pyls
+  :package-version '(lsp-mode . "6.1"))
+
+(defcustom lsp-pyls-plugins-flake8-select nil
+  "Select errors and warnings"
+  :type '(repeat string)
+  :group 'lsp-pyls
+  :package-version '(lsp-mode . "6.1"))
+
+(defcustom lsp-pyls-plugins-flake8-ignore nil
+  "Ignore errors and warnings"
+  :type '(repeat string)
+  :group 'lsp-pyls
+  :package-version '(lsp-mode . "6.1"))
+
+(defcustom lsp-pyls-plugins-flake8-hang-closing nil
+  "Hang closing bracket instead of matching indentation of
+opening bracket's line."
+  :type 'boolean
+  :group 'lsp-pyls
+  :package-version '(lsp-mode . "6.1"))
+
+(defcustom lsp-pyls-plugins-flake8-max-line-length nil
+  "Set maximum allowed line length."
+  :type 'number
+  :group 'lsp-pyls
+  :package-version '(lsp-mode . "6.1"))
+
 (defcustom lsp-pyls-plugins-pydocstyle-enabled nil
   "Enable or disable the plugin."
   :type 'boolean
@@ -359,6 +403,13 @@ E431"
    ("pyls.plugins.pycodestyle.filename" lsp-pyls-plugins-pycodestyle-filename)
    ("pyls.plugins.pycodestyle.exclude" lsp-pyls-plugins-pycodestyle-exclude)
    ("pyls.plugins.pycodestyle.enabled" lsp-pyls-plugins-pycodestyle-enabled t)
+   ("pyls.plugins.flake8.maxLineLength" lsp-pyls-plugins-flake8-max-line-length)
+   ("pyls.plugins.flake8.hangClosing" lsp-pyls-plugins-flake8-hang-closing t)
+   ("pyls.plugins.flake8.ignore" lsp-pyls-plugins-flake8-ignore)
+   ("pyls.plugins.flake8.select" lsp-pyls-plugins-flake8-select)
+   ("pyls.plugins.flake8.filename" lsp-pyls-plugins-flake8-filename)
+   ("pyls.plugins.flake8.exclude" lsp-pyls-plugins-flake8-exclude)
+   ("pyls.plugins.flake8.enabled" lsp-pyls-plugins-flake8-enabled t)
    ("pyls.plugins.pylint.enabled" lsp-pyls-plugins-pylint-enabled t)
    ("pyls.plugins.pylint.args" lsp-pyls-plugins-pylint-args)
    ("pyls.plugins.flake8.enabled" lsp-pyls-plugins-flake8-enabled)
